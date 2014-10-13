@@ -47,6 +47,9 @@
 1	VerbT -> carries
 1	VerbT -> rides
 
+1 Is -> is
+1 Has -> has
+
 # End-of-sentence.
 1	EOF ->	!
 1	EOF ->	.
@@ -195,78 +198,82 @@
 1	Not ->	not
 
 # Verbs (base form).
-1	BaseVerb ->	have
+1	TBaseVerb ->	have
 1	BaseVerb ->	speak
-1	BaseVerb ->	cover
+1	TBaseVerb ->	cover
 1	BaseVerb ->	be
-1	BaseVerb ->	ride
-1	BaseVerb ->	drink
-1	BaseVerb ->	grow
-1	BaseVerb ->	carry
+1	TBaseVerb ->	ride
+1	TBaseVerb ->	drink
+1	TBaseVerb ->	grow
+1	TBaseVerb ->	carry
 1	BaseVerb ->	suggest
 1	BaseVerb ->	migrate
-1	BaseVerb ->	know
+1	TBaseVerb ->	know
+
 
 # Verbs (past tense).
-1	PastVerb ->	had
+1	TPastVerb ->	had
 1	PastVerb ->	spoke
-1	PastVerb ->	covered
+1	TPastVerb ->	covered
 1	PastVerb ->	was
 1	PastVerb ->	were
-1	PastVerb ->	rode
-1	PastVerb ->	drank
-1	PastVerb ->	grew
-1	PastVerb ->	carried
+1	TPastVerb ->	rode
+1	TPastVerb ->	drank
+1	TPastVerb ->	grew
+1	TPastVerb ->	carried
 1	PastVerb ->	suggested
 1	PastVerb ->	migrated
-1	PastVerb ->	knew
+1	TPastVerb ->	knew
 
 # Verbs (present participles).
-1	PresentPartVerb ->	having
+1	TPresentPartVerb ->	having
 1	PresentPartVerb ->	speaking
-1	PresentPartVerb ->	covering
+1	TPresentPartVerb ->	covering
 1	PresentPartVerb ->	being
-1	PresentPartVerb ->	riding
-1	PresentPartVerb ->	drinking
-1	PresentPartVerb ->	growing
-1	PresentPartVerb ->	carrying
+1	TPresentPartVerb ->	riding
+1	TPresentPartVerb ->	drinking
+1	TPresentPartVerb ->	growing
+1	TPresentPartVerb ->	carrying
 1	PresentPartVerb ->	suggesting
 1	PresentPartVerb ->	migrating
-1	PresentPartVerb ->	knowing
+1	TPresentPartVerb ->	knowing
 
 # Verbs (past participle).
-1	PastPartVerb ->	had
+1	TPastPartVerb ->	had
 1	PastPartVerb ->	spoken
-1	PastPartVerb ->	covered
+1	TPastPartVerb ->	covered
 1	PastPartVerb ->	been
-1	PastPartVerb ->	ridden
-1	PastPartVerb ->	drunk
-1	PastPartVerb ->	grown
-1	PastPartVerb ->	carried
+1	TPastPartVerb ->	ridden
+1	TPastPartVerb ->	drunk
+1	TPastPartVerb ->	grown
+1	TPastPartVerb ->	carried
 1	PastPartVerb ->	suggested
 1	PastPartVerb ->	migrated
-1	PastPartVerb ->	known
+1	TPastPartVerb ->	known
 
 # More third person singular verbs.
 1	3rdSingPresentVerb ->	speaks
-1	3rdSingPresentVerb ->	grows
+1	T3rdSingPresentVerb ->	grows
 1	3rdSingPresentVerb ->	goes
 1	3rdSingPresentVerb ->	migrates
 1	3rdSingPresentVerb ->	suggests
-1	3rdSingPresentVerb ->	knows
+1	T3rdSingPresentVerb ->	knows
 
 # Verbs (present, plural, third person).
-1	3rdPluralPresentVerb ->	have
+1	T3rdPluralPresentVerb ->	have
 1	3rdPluralPresentVerb ->	speak
-1	3rdPluralPresentVerb ->	cover
+1	T3rdPluralPresentVerb ->	cover
 1	3rdPluralPresentVerb ->	are
-1	3rdPluralPresentVerb ->	ride
-1	3rdPluralPresentVerb ->	drink
-1	3rdPluralPresentVerb ->	grow
-1	3rdPluralPresentVerb ->	carry
+1	T3rdPluralPresentVerb ->	ride
+1	T3rdPluralPresentVerb ->	drink
+1	T3rdPluralPresentVerb ->	grow
+1	T3rdPluralPresentVerb ->	carry
 1	3rdPluralPresentVerb ->	suggest
 1	3rdPluralPresentVerb ->	migrate
-1	3rdPluralPresentVerb ->	know
+1	T3rdPluralPresentVerb ->	know
+
+1 Are -> are
+1 Have -> have
 
 # Wh-determiners.
 1	WhDet ->	that

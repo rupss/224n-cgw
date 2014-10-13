@@ -10,3 +10,5 @@
 1 Markov -> {Not | BaseVerb | PastVerb | PresentPartVerb | PastPartVerb} (Markov)
 1 Markov -> {3rdSingPresentVerb | 3rdPluralPresentVerb | WhDet | WhPN} (Markov)
 1 Markov -> {Whose | WhAdv | PossMarker | Comma | And | But} (Markov)
+1 Markov -> {Are | Have | Is | Has | T3rdPluralPresentVerb | T3rdSingPresentVerb} (Markov)
+1 Markov -> {TPastPartVerb | TPresentPartVerb | TPastVerb | TBaseVerb} (Markov)

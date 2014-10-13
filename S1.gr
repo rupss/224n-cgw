@@ -7,9 +7,8 @@
 # This is a very, very, very simple grammar to get you started.
 
 
-
 1 S1 -> {SingPhrase | PluralPhrase}
-1 NP -> {SingNP | PluralNP }
+1 NP -> {SingNP | PluralNP}
 
 1 AdjPhrase -> {CommaAdj | AndAdj}
 10 AdjPhrase -> {Adj | CompAdj | SuperAdj}
@@ -25,11 +24,36 @@
 20 SingNP -> Det (AdjPhrase) Noun
 1 SingNP -> ProperNoun
 
-1 SingVP -> VerbT NP
+1 SingVP -> {SingVPNoObj | SingVPWithObj}
+1 SingVPNoObj -> { SingVerbOnly | IsVerb | HasVerb}
+
+1 SingVerbOnly -> {PastVerb | 3rdSingPresentVerb | TPastVerb | T3rdSingPresentVerb}
+1 IsVerb -> Is {PresentPartVerb | TPresentPartVerb }
+1 HasVerb -> Has {PastPartVerb | TPastPartVerb}
+
+1 SingVPWithObj -> { SingVerbObject | IsVerbObj | HasVerbObj}
+
+1 SingVerbObject -> {TPastVerb | T3rdSingPresentVerb} NP
+1 IsVerbObj -> Is TPresentPartVerb NP
+1 HasVerbObj -> Has TPastPartVerb NP
+
 
 1 PluralPhrase -> PluralNP PluralVP
 1 PluralNP -> (PluralDet) (AdjPhrase) PluralNoun
 1 PluralNP -> PluralProperNoun
 
-1 PluralVP -> VerbT NP
+1 PluralVP -> {PluralVPNoObj | PluralVPWithObj }
+
+1 AreVerb -> Are {PresentPartVerb | TPresentPartVerb}
+1 HaveVerb -> Have {PastPartVerb | TPastPartVerb}
+1 PlainPluralVerb -> {BaseVerb | TBaseVerb | T3rdPluralPresentVerb}
+
+1 PluralVPNoObj -> {PlainPluralVerb | AreVerb | HaveVerb}
+
+1 PluralVerbObj -> {TPastVerb | T3rdPluralPresentVerb} NP
+1 AreVerbObj -> Are TPresentPartVerb NP
+1 HaveVerbObj ->  Have TPastPartVerb NP
+
+1 PluralVPWithObj -> {PluralVerbObj | AreVerbObj | HaveVerbObj}
+
 
