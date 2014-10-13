@@ -1,0 +1,291 @@
+# This is a hand-generated set of preterminal rules.
+# It specifies a simple tag set which will be handled by the S2
+# grammar and which can (though doesn't necessarily need to be)
+# handled by the S1 grammar.
+#
+# The weights given here may be changed, but no new vocabulary
+# items are to be added.
+
+# Miscellaneous items that don't fit into any of our simple tags are
+# given to Misc.  You will want to develop your own tags for these!
+
+# Singular and mass nouns.  Notice that only the
+# ones that start with consonants get our Noun tag.
+1	Noun ->	{castle | king | defeater | sovereign | servant | corner | land | quest | chalice | master | horse | fruit | swallow | sun | winter | coconut | pound | husk | home | weight | story}
+
+# Determiners.
+1	Det	 -> {a | another | any | each | every | no | that | the | this}
+
+1 PluralDet -> {the | no}
+
+# Prepositions.
+1	Prep -> above
+1	Prep ->	across
+1	Prep ->	at
+1	Prep ->	below
+1	Prep ->	by
+1	Prep ->	for
+1	Prep ->	from
+1	Prep ->	into
+1	Prep ->	near
+1	Prep ->	of
+1	Prep ->	on
+1	Prep ->	over
+1	Prep ->	through
+1	Prep ->	with
+
+# Proper nouns.  Note that our Proper tag is just for people.
+1	Proper -> {Arthur | Guinevere | Sir Lancelot | Sir Bedevere | Zoot | Dingo | Patsy | Uther Pendragon}
+
+# Verbs (third person singular present).
+# Note that only transitive verbs get our VerbT tag,
+# and some of those could also function as intransitives!
+1	VerbT -> has
+1	VerbT -> covers
+1	VerbT -> is
+1	VerbT -> drinks
+1	VerbT -> carries
+1	VerbT -> rides
+
+# End-of-sentence.
+1	EOF ->	!
+1	EOF ->	.
+1	EOF ->	?
+
+# Pauses.
+
+1 Comma -> ,
+
+
+1	Pause ->	,
+1	Pause ->	...
+1	Pause ->	--
+1	Pause ->	;
+1	Pause ->	:
+
+# Coordinating conjunctions.
+1	CoordConj ->	and
+1  And -> and
+1	CoordConj ->	but
+1 But -> but
+1	CoordConj ->	or
+1	CoordConj ->	either
+1	CoordConj ->	nor
+1	CoordConj ->	neither
+1	CoordConj ->	so
+
+# Numbers.
+1	Numbers -> {eight | five | one | 5.5 | sixty | 5,000}
+
+# Expletive.
+1	Exp -> there
+
+# Subordinating conjunctions.
+1	SubConj -> {that | so | while | because | if}
+
+# Modals.
+1	Modal -> can
+1	Modal ->	could
+1	Modal ->	may
+1	Modal ->	might
+1	Modal ->	must
+1	Modal ->	ought
+1	Modal ->	shall
+1	Modal ->	should
+1	Modal ->	will
+1	Modal ->	would
+
+
+# Adjectives.
+1	Adj ->	bloody
+1	Adj ->	weary
+1	Adj ->	unable
+1	Adj ->	trusty
+1	Adj ->	further
+1	Adj ->	sacred
+1	Adj ->	tropical
+1	Adj ->	indigenous
+1	Adj ->	temperate
+1	Adj ->	hot
+1	Adj ->	lucky
+1	Adj ->	simple
+1	Adj ->	tiny
+1	Adj ->	hard	
+1	Adj ->	sensational
+1	Adj ->	comparable
+1	Adj ->	angolian
+1	Adj ->	yellow
+1	Adj ->	plodding
+
+# Comparative adjectives.
+1	CompAdj ->	bloodier
+1	CompAdj ->	wearier
+1	CompAdj ->	trustier
+1	CompAdj ->	hotter
+1	CompAdj ->	simpler
+1	CompAdj ->	tinier
+1	CompAdj ->	harder
+
+# Superlative adjectives.
+1	SuperAdj ->	bloodiest
+1	SuperAdj ->	weariest
+1	SuperAdj ->	trustiest
+1	SuperAdj ->	hottest
+1	SuperAdj ->	simplest
+1	SuperAdj ->	tiniest
+1	SuperAdj ->	hardest
+
+# Plural nouns.
+1	PluralNoun ->	coconuts
+1	PluralNoun ->	halves
+1	PluralNoun ->	snows
+1	PluralNoun ->	mountains
+1	PluralNoun ->	areas
+1	PluralNoun ->	strangers
+1	PluralNoun ->	inches
+1	PluralNoun ->	snakes
+1	PluralNoun ->	ants
+1	PluralNoun ->	nights
+
+# More proper nouns, not people.
+
+1	ProperNoun ->	Camelot
+1	ProperNoun ->	England
+1	ProperNoun ->	Holy Grail
+1	ProperNoun ->	Round Table
+
+# Plural proper nouns.
+1	PluralProperNoun ->	Britons
+1	PluralProperNoun ->	Saxons
+
+# Personal pronouns.
+1	PersonalPN ->	he
+1	PersonalPN ->	her
+1	PersonalPN ->	him
+1	PersonalPN ->	it
+1	PersonalPN ->	one
+1	PersonalPN ->	she
+1	PersonalPN ->	them
+1	PersonalPN ->	they
+
+# Possessive personal pronouns
+1	PossPersonalPN ->	her
+1	PossPersonalPN ->	his
+1	PossPersonalPN ->	its
+1	PossPersonalPN ->	their
+
+# Adverbs.
+1	Adv ->	again
+1	Adv ->	already
+1	Adv ->	currently
+1	Adv ->	frequently
+1	Adv ->	precisely
+1	Adv ->	south
+1	Adv ->	successfully
+1	Adv ->	unfortunately
+
+# 'do'/'does'
+1	do ->	do
+1	does ->	does
+
+# 'to'
+1	to ->	to
+
+# 'not'
+1	not ->	not
+
+# Verbs (base form).
+1	BaseVerb ->	have
+1	BaseVerb ->	speak
+1	BaseVerb ->	cover
+1	BaseVerb ->	be
+1	BaseVerb ->	ride
+1	BaseVerb ->	drink
+1	BaseVerb ->	grow
+1	BaseVerb ->	carry
+1	BaseVerb ->	suggest
+1	BaseVerb ->	migrate
+1	BaseVerb ->	know
+
+# Verbs (past tense).
+1	PastVerb ->	had
+1	PastVerb ->	spoke
+1	PastVerb ->	covered
+1	PastVerb ->	was
+1	PastVerb ->	were
+1	PastVerb ->	rode
+1	PastVerb ->	drank
+1	PastVerb ->	grew
+1	PastVerb ->	carried
+1	PastVerb ->	suggested
+1	PastVerb ->	migrated
+1	PastVerb ->	knew
+
+# Verbs (present participles).
+1	PresentPartVerb ->	having
+1	PresentPartVerb ->	speaking
+1	PresentPartVerb ->	covering
+1	PresentPartVerb ->	being
+1	PresentPartVerb ->	riding
+1	PresentPartVerb ->	drinking
+1	PresentPartVerb ->	growing
+1	PresentPartVerb ->	carrying
+1	PresentPartVerb ->	suggesting
+1	PresentPartVerb ->	migrating
+1	PresentPartVerb ->	knowing
+
+# Verbs (past participle).
+1	PastPartVerb ->	had
+1	PastPartVerb ->	spoken
+1	PastPartVerb ->	covered
+1	PastPartVerb ->	been
+1	PastPartVerb ->	ridden
+1	PastPartVerb ->	drunk
+1	PastPartVerb ->	grown
+1	PastPartVerb ->	carried
+1	PastPartVerb ->	suggested
+1	PastPartVerb ->	migrated
+1	PastPartVerb ->	known
+
+# More third person singular verbs.
+1	3rdSingPresentVerb ->	speaks
+1	3rdSingPresentVerb ->	grows
+1	3rdSingPresentVerb ->	goes
+1	3rdSingPresentVerb ->	migrates
+1	3rdSingPresentVerb ->	suggests
+1	3rdSingPresentVerb ->	knows
+
+# Verbs (present, plural, third person).
+1	3rdPluralPresentVerb ->	have
+1	3rdPluralPresentVerb ->	speak
+1	3rdPluralPresentVerb ->	cover
+1	3rdPluralPresentVerb ->	are
+1	3rdPluralPresentVerb ->	ride
+1	3rdPluralPresentVerb ->	drink
+1	3rdPluralPresentVerb ->	grow
+1	3rdPluralPresentVerb ->	carry
+1	3rdPluralPresentVerb ->	suggest
+1	3rdPluralPresentVerb ->	migrate
+1	3rdPluralPresentVerb ->	know
+
+# Wh-determiners.
+1	WhDet ->	that
+1	WhDet ->	what
+1	WhDet ->	which
+
+# Wh-pronouns.
+1	WhPN ->	what
+1	WhPN ->	who
+
+# Wh possessive pronoun.
+1	whose ->	whose
+
+# Wh-adverbs
+1	WhAdv ->	how
+1	WhAdv ->	when
+1	WhAdv ->	where
+1	WhAdv ->	why
+
+
+# Possessive marker.
+1	PossMarker ->	's

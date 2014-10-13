@@ -1,0 +1,48 @@
+# The start symbol is START.
+
+# These two rules are required; choose their weights carefully!
+99 START -> S1
+1 START -> S2
+
+# This is a very, very, very simple grammar to get you started.
+
+1 S1 -> NP VP .
+
+1 VP -> VerbT NP
+
+20 NP -> Det Nbar
+1 NP -> Proper
+
+20 Nbar -> Noun
+1 Nbar -> Nbar PP
+
+1 PP -> Prep NP
+
+###
+
+S1 -> {SingPhrase | PluralPhrase}
+NP -> {SingNP | PluralNP }
+
+
+AdjPhrase -> {CommaAdj | AndAdj}
+AdjPhrase -> {Adj | CompAdj | SuperAdj}
+
+CommaAdj -> CommaAdj Comma CommaAdj
+CommaAdj -> {Adj | CompAdj | SuperAdj}
+
+AndAdj -> AndAdj And AndAdj
+AndAdj -> {Adj | CompAdj | SuperAdj}
+
+SingPhrase -> SingNP SingVP
+
+SingNP -> Det (AdjPhrase) Noun
+SingNP -> ProperNoun
+
+SingVP -> VerbT NP
+
+PluralPhrase -> PluralNP PluralVP
+PluralNP -> (PluralDet) (AdjPhrase) PluralNoun
+PluralNP -> PluralProperNoun
+
+PluralVP -> VerbT NP
+

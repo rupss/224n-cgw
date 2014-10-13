@@ -1,0 +1,364 @@
+1.0	Adv	again
+1.0	Adv	already
+1.0	Adv	currently
+1.0	Adv	frequently
+1.0	Adv	precisely
+1.0	Adv	south
+1.0	Adv	successfully
+1.0	Adv	unfortunately
+1.0	Whose	whose
+99.0	START	S1
+1.0	START	S2
+1.0	Pause	,
+1.0	Pause	...
+1.0	Pause	--
+1.0	Pause	;
+1.0	Pause	:
+0.25	PluralNP	PluralNoun
+0.25	PluralNP	PluralDet	PluralNoun
+0.25	PluralNP	AdjPhrase	PluralNoun
+0.25	PluralNP	PluralDet	AdjPhrase	PluralNoun
+1.0	PluralNP	PluralProperNoun
+1.0	EOF	!
+1.0	EOF	.
+1.0	EOF	?
+1.0	S2	Markov
+0.5	S1	PluralPhrase
+0.5	S1	SingPhrase
+1.0	PluralNoun	coconuts
+1.0	PluralNoun	halves
+1.0	PluralNoun	snows
+1.0	PluralNoun	mountains
+1.0	PluralNoun	areas
+1.0	PluralNoun	strangers
+1.0	PluralNoun	inches
+1.0	PluralNoun	snakes
+1.0	PluralNoun	ants
+1.0	PluralNoun	nights
+1.0	CompAdj	bloodier
+1.0	CompAdj	wearier
+1.0	CompAdj	trustier
+1.0	CompAdj	hotter
+1.0	CompAdj	simpler
+1.0	CompAdj	tinier
+1.0	CompAdj	harder
+1.0	PluralVP	VerbT	NP
+1.0	To	to
+0.2	SubConj	if
+0.2	SubConj	because
+0.2	SubConj	while
+0.2	SubConj	so
+0.2	SubConj	that
+1.0	3rdSingPresentVerb	speaks
+1.0	3rdSingPresentVerb	grows
+1.0	3rdSingPresentVerb	goes
+1.0	3rdSingPresentVerb	migrates
+1.0	3rdSingPresentVerb	suggests
+1.0	3rdSingPresentVerb	knows
+1.0	3rdPluralPresentVerb	have
+1.0	3rdPluralPresentVerb	speak
+1.0	3rdPluralPresentVerb	cover
+1.0	3rdPluralPresentVerb	are
+1.0	3rdPluralPresentVerb	ride
+1.0	3rdPluralPresentVerb	drink
+1.0	3rdPluralPresentVerb	grow
+1.0	3rdPluralPresentVerb	carry
+1.0	3rdPluralPresentVerb	suggest
+1.0	3rdPluralPresentVerb	migrate
+1.0	3rdPluralPresentVerb	know
+1.0	Adj	bloody
+1.0	Adj	weary
+1.0	Adj	unable
+1.0	Adj	trusty
+1.0	Adj	further
+1.0	Adj	sacred
+1.0	Adj	tropical
+1.0	Adj	indigenous
+1.0	Adj	temperate
+1.0	Adj	hot
+1.0	Adj	lucky
+1.0	Adj	simple
+1.0	Adj	tiny
+1.0	Adj	hard
+1.0	Adj	sensational
+1.0	Adj	comparable
+1.0	Adj	angolian
+1.0	Adj	yellow
+1.0	Adj	plodding
+1.0	Prep	above
+1.0	Prep	across
+1.0	Prep	at
+1.0	Prep	below
+1.0	Prep	by
+1.0	Prep	for
+1.0	Prep	from
+1.0	Prep	into
+1.0	Prep	near
+1.0	Prep	of
+1.0	Prep	on
+1.0	Prep	over
+1.0	Prep	through
+1.0	Prep	with
+1.0	ProperNoun	Camelot
+1.0	ProperNoun	England
+1.0	ProperNoun	Holy	Grail
+1.0	ProperNoun	Round	Table
+1.0	Do	do
+1.0	SuperAdj	bloodiest
+1.0	SuperAdj	weariest
+1.0	SuperAdj	trustiest
+1.0	SuperAdj	hottest
+1.0	SuperAdj	simplest
+1.0	SuperAdj	tiniest
+1.0	SuperAdj	hardest
+1.0	But	but
+1.0	VerbT	has
+1.0	VerbT	covers
+1.0	VerbT	is
+1.0	VerbT	drinks
+1.0	VerbT	carries
+1.0	VerbT	rides
+1.0	PossMarker	's
+1.0	Not	not
+1.0	PersonalPN	he
+1.0	PersonalPN	her
+1.0	PersonalPN	him
+1.0	PersonalPN	it
+1.0	PersonalPN	one
+1.0	PersonalPN	she
+1.0	PersonalPN	them
+1.0	PersonalPN	they
+1.0	PresentPartVerb	having
+1.0	PresentPartVerb	speaking
+1.0	PresentPartVerb	covering
+1.0	PresentPartVerb	being
+1.0	PresentPartVerb	riding
+1.0	PresentPartVerb	drinking
+1.0	PresentPartVerb	growing
+1.0	PresentPartVerb	carrying
+1.0	PresentPartVerb	suggesting
+1.0	PresentPartVerb	migrating
+1.0	PresentPartVerb	knowing
+10.0	SingNP	Det	Noun
+10.0	SingNP	Det	AdjPhrase	Noun
+1.0	SingNP	ProperNoun
+1.0	WhDet	that
+1.0	WhDet	what
+1.0	WhDet	which
+1.0	Exp	there
+1.0	PastPartVerb	had
+1.0	PastPartVerb	spoken
+1.0	PastPartVerb	covered
+1.0	PastPartVerb	been
+1.0	PastPartVerb	ridden
+1.0	PastPartVerb	drunk
+1.0	PastPartVerb	grown
+1.0	PastPartVerb	carried
+1.0	PastPartVerb	suggested
+1.0	PastPartVerb	migrated
+1.0	PastPartVerb	known
+0.047619047619	Noun	story
+0.047619047619	Noun	weight
+0.047619047619	Noun	home
+0.047619047619	Noun	husk
+0.047619047619	Noun	pound
+0.047619047619	Noun	coconut
+0.047619047619	Noun	winter
+0.047619047619	Noun	sun
+0.047619047619	Noun	swallow
+0.047619047619	Noun	fruit
+0.047619047619	Noun	horse
+0.047619047619	Noun	master
+0.047619047619	Noun	chalice
+0.047619047619	Noun	quest
+0.047619047619	Noun	land
+0.047619047619	Noun	corner
+0.047619047619	Noun	servant
+0.047619047619	Noun	sovereign
+0.047619047619	Noun	defeater
+0.047619047619	Noun	king
+0.047619047619	Noun	castle
+1.0	SingVP	VerbT	NP
+0.5	PluralDet	no
+0.5	PluralDet	the
+0.111111111111	Det	this
+0.111111111111	Det	the
+0.111111111111	Det	that
+0.111111111111	Det	no
+0.111111111111	Det	every
+0.111111111111	Det	each
+0.111111111111	Det	any
+0.111111111111	Det	another
+0.111111111111	Det	a
+1.0	WhPN	what
+1.0	WhPN	who
+1.0	PossPersonalPN	her
+1.0	PossPersonalPN	his
+1.0	PossPersonalPN	its
+1.0	PossPersonalPN	their
+1.0	BaseVerb	have
+1.0	BaseVerb	speak
+1.0	BaseVerb	cover
+1.0	BaseVerb	be
+1.0	BaseVerb	ride
+1.0	BaseVerb	drink
+1.0	BaseVerb	grow
+1.0	BaseVerb	carry
+1.0	BaseVerb	suggest
+1.0	BaseVerb	migrate
+1.0	BaseVerb	know
+1.0	CommaAdj	CommaAdj	Comma	CommaAdj
+0.333333333333	CommaAdj	SuperAdj
+0.333333333333	CommaAdj	CompAdj
+0.333333333333	CommaAdj	Adj
+1.0	AndAdj	AndAdj	And	AndAdj
+0.333333333333	AndAdj	SuperAdj
+0.333333333333	AndAdj	CompAdj
+0.333333333333	AndAdj	Adj
+1.0	Modal	can
+1.0	Modal	could
+1.0	Modal	may
+1.0	Modal	might
+1.0	Modal	must
+1.0	Modal	ought
+1.0	Modal	shall
+1.0	Modal	should
+1.0	Modal	will
+1.0	Modal	would
+0.5	NP	PluralNP
+0.5	NP	SingNP
+0.1	Markov	VerbT
+0.1	Markov	Proper
+0.1	Markov	Prep
+0.1	Markov	Noun
+0.1	Markov	Det
+0.1	Markov	VerbT	Markov
+0.1	Markov	Proper	Markov
+0.1	Markov	Prep	Markov
+0.1	Markov	Noun	Markov
+0.1	Markov	Det	Markov
+0.0833333333333	Markov	Pause
+0.0833333333333	Markov	EOF
+0.0833333333333	Markov	VerbT
+0.0833333333333	Markov	Proper
+0.0833333333333	Markov	Prep
+0.0833333333333	Markov	PluralDet
+0.0833333333333	Markov	Pause	Markov
+0.0833333333333	Markov	EOF	Markov
+0.0833333333333	Markov	VerbT	Markov
+0.0833333333333	Markov	Proper	Markov
+0.0833333333333	Markov	Prep	Markov
+0.0833333333333	Markov	PluralDet	Markov
+0.0833333333333	Markov	Adj
+0.0833333333333	Markov	Modal
+0.0833333333333	Markov	SubConj
+0.0833333333333	Markov	Exp
+0.0833333333333	Markov	Numbers
+0.0833333333333	Markov	CoordConj
+0.0833333333333	Markov	Adj	Markov
+0.0833333333333	Markov	Modal	Markov
+0.0833333333333	Markov	SubConj	Markov
+0.0833333333333	Markov	Exp	Markov
+0.0833333333333	Markov	Numbers	Markov
+0.0833333333333	Markov	CoordConj	Markov
+0.1	Markov	PluralProperNoun
+0.1	Markov	ProperNoun
+0.1	Markov	PluralNoun
+0.1	Markov	SuperAdj
+0.1	Markov	CompAdj
+0.1	Markov	PluralProperNoun	Markov
+0.1	Markov	ProperNoun	Markov
+0.1	Markov	PluralNoun	Markov
+0.1	Markov	SuperAdj	Markov
+0.1	Markov	CompAdj	Markov
+0.0833333333333	Markov	To
+0.0833333333333	Markov	Does
+0.0833333333333	Markov	Do
+0.0833333333333	Markov	Adv
+0.0833333333333	Markov	PossPersonalPN
+0.0833333333333	Markov	PersonalPN
+0.0833333333333	Markov	To	Markov
+0.0833333333333	Markov	Does	Markov
+0.0833333333333	Markov	Do	Markov
+0.0833333333333	Markov	Adv	Markov
+0.0833333333333	Markov	PossPersonalPN	Markov
+0.0833333333333	Markov	PersonalPN	Markov
+0.1	Markov	PastPartVerb
+0.1	Markov	PresentPartVerb
+0.1	Markov	PastVerb
+0.1	Markov	BaseVerb
+0.1	Markov	Not
+0.1	Markov	PastPartVerb	Markov
+0.1	Markov	PresentPartVerb	Markov
+0.1	Markov	PastVerb	Markov
+0.1	Markov	BaseVerb	Markov
+0.1	Markov	Not	Markov
+0.125	Markov	WhPN
+0.125	Markov	WhDet
+0.125	Markov	3rdPluralPresentVerb
+0.125	Markov	3rdSingPresentVerb
+0.125	Markov	WhPN	Markov
+0.125	Markov	WhDet	Markov
+0.125	Markov	3rdPluralPresentVerb	Markov
+0.125	Markov	3rdSingPresentVerb	Markov
+0.0833333333333	Markov	But
+0.0833333333333	Markov	And
+0.0833333333333	Markov	Comma
+0.0833333333333	Markov	PossMarker
+0.0833333333333	Markov	WhAdv
+0.0833333333333	Markov	Whose
+0.0833333333333	Markov	But	Markov
+0.0833333333333	Markov	And	Markov
+0.0833333333333	Markov	Comma	Markov
+0.0833333333333	Markov	PossMarker	Markov
+0.0833333333333	Markov	WhAdv	Markov
+0.0833333333333	Markov	Whose	Markov
+1.0	And	and
+1.0	PastVerb	had
+1.0	PastVerb	spoke
+1.0	PastVerb	covered
+1.0	PastVerb	was
+1.0	PastVerb	were
+1.0	PastVerb	rode
+1.0	PastVerb	drank
+1.0	PastVerb	grew
+1.0	PastVerb	carried
+1.0	PastVerb	suggested
+1.0	PastVerb	migrated
+1.0	PastVerb	knew
+1.0	SingPhrase	SingNP	SingVP
+1.0	WhAdv	how
+1.0	WhAdv	when
+1.0	WhAdv	where
+1.0	WhAdv	why
+1.0	CoordConj	and
+1.0	CoordConj	but
+1.0	CoordConj	or
+1.0	CoordConj	either
+1.0	CoordConj	nor
+1.0	CoordConj	neither
+1.0	CoordConj	so
+1.0	Does	does
+1.0	Comma	,
+0.166666666667	Numbers	5,000
+0.166666666667	Numbers	sixty
+0.166666666667	Numbers	5.5
+0.166666666667	Numbers	one
+0.166666666667	Numbers	five
+0.166666666667	Numbers	eight
+0.125	Proper	Uther	Pendragon
+0.125	Proper	Patsy
+0.125	Proper	Dingo
+0.125	Proper	Zoot
+0.125	Proper	Sir	Bedevere
+0.125	Proper	Sir	Lancelot
+0.125	Proper	Guinevere
+0.125	Proper	Arthur
+0.5	AdjPhrase	AndAdj
+0.5	AdjPhrase	CommaAdj
+3.33333333333	AdjPhrase	SuperAdj
+3.33333333333	AdjPhrase	CompAdj
+3.33333333333	AdjPhrase	Adj
+1.0	PluralProperNoun	Britons
+1.0	PluralProperNoun	Saxons
+1.0	PluralPhrase	PluralNP	PluralVP
