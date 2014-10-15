@@ -14,9 +14,11 @@
 1	Noun ->	{castle | king | defeater | sovereign | servant | corner | land | quest | chalice | master | horse | fruit | swallow | sun | winter | coconut | pound | husk | home | weight | story}
 
 # Determiners.
-1	Det	 -> {a | another | any | each | every | no | that | the | this}
+1	SingDet	 -> {a | another | any | each | every | that | this}
 
-1 PluralDet -> {the | no}
+1 Det -> {The | no}
+
+1 The -> the
 
 # Prepositions.
 1	Prep -> above

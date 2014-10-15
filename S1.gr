@@ -1,18 +1,33 @@
 # The start symbol is START.
 
 # These two rules are required; choose their weights carefully!
-99 START -> S1
-1 START -> S2
+65 START -> S1
+45 START -> S2
 
 # This is a very, very, very simple grammar to get you started.
 
 #Types of Sentences
-10 S1 -> (AP Comma) SingDeclarative (PP) (AP) {ExclamationMark | Period}
-10 S1 -> (AP Comma) PluralDeclarative (PP) (AP) {ExclamationMark | Period}
-5 S1 -> SingQuestion (PP) (AP) QuestionMark
-5 S1 -> PluralQuestion (PP) (AP) QuestionMark
-2 S1 -> (AP Comma) Imperative (PP) (AP) {ExclamationMark | Period}
-#1 S1 -> Exclamation ExclamationMark
+200 S1 -> SingDeclarative (PP) Period
+200 S1 -> PluralDeclarative (PP) Period
+20 S1 -> SingDeclarative (PP) ExclamationMark
+20 S1 -> PluralDeclarative (PP) ExclamationMark
+20 S1 -> SingDeclarative (PP) QuestionMark
+20 S1 -> PluralDeclarative (PP) QuestionMark
+100 S1 -> SingQuestion (PP) QuestionMark
+100 S1 -> PluralQuestion (PP) QuestionMark
+6 S1 -> Imperative (PP) ExclamationMark
+2 S1 -> Imperative (PP) Period
+
+100 S1 -> (AP Comma) SingDeclarative (PP) (AP) Period
+100 S1 -> (AP Comma) PluralDeclarative (PP) (AP) Period
+10 S1 -> (AP Comma) SingDeclarative (PP) (AP) ExclamationMark
+10 S1 -> (AP Comma) PluralDeclarative (PP) (AP) ExclamationMark
+10 S1 -> (AP Comma) SingDeclarative (PP) (AP) QuestionMark
+10 S1 -> (AP Comma) PluralDeclarative (PP) (AP) QuestionMark
+50 S1 -> SingQuestion (PP) (AP) QuestionMark
+50 S1 -> PluralQuestion (PP) (AP) QuestionMark
+3 S1 -> (AP Comma) Imperative (PP) (AP) ExclamationMark
+1 S1 -> (AP Comma) Imperative (PP) (AP) Period
 
 #Declaritive Structures
 1 SingDeclarative -> SingSubj SingVP
@@ -23,6 +38,7 @@
 1 Obj -> PluralObj
 
 20 SingObj -> DetPhrase (AdjPhrase) Noun
+5 SingObj -> (AdjPhrase) Noun
 1 SingObj -> ProperNoun
 1 SingObj -> Proper
 5 SingObj -> PersonalPNAcc
@@ -41,6 +57,10 @@
 5 SingSubj -> Proper
 5 SingSubj -> PersonalPNNomSing
 
+10 Possessor -> DetPhrase (AdjPhrase) Noun
+30 Possessor -> ProperNoun
+5 Possessor -> Proper
+
 20 PluralSubj -> (PluralDetPhrase) (AdjPhrase) PluralNoun
 5 PluralSubj -> PluralProperNoun
 5 PluralSubj -> PersonalPNNomPl
@@ -51,12 +71,13 @@
 
 #Determiners
 20 DetPhrase -> Det
+20 DetPhrase -> SingDet
 10 DetPhrase -> PossPersonalPN
-1 DetPhrase -> ProperNoun PossMarker
+1 DetPhrase -> Possessor PossMarker
 
-20 PluralDetPhrase -> PluralDet (Numbers)
+20 PluralDetPhrase -> Det (Numbers)
 10 PluralDetPhrase -> PossPersonalPN (Numbers)
-1 PluralDetPhrase -> ProperNoun PossMarker (Numbers)
+1 PluralDetPhrase -> Possessor PossMarker (Numbers)
 10 PluralDetPhrase -> Numbers
 1 PluralDetPhrase -> e
 
@@ -95,6 +116,8 @@
 1 SingVP -> Was (Not) DetPhrase (AdjPhrase) Noun
 1 SingVP -> Is (Not) AndAdj
 1 SingVP -> Was (Not) AndAdj
+1 SingVP -> Is (Not) The SuperAdj
+1 SingVP -> Was (Not) The SuperAdj
 
 1 SingVP -> Modal (Not) PresentPl
 1 SingVP -> Modal (Not) TPresentPl (Obj)
@@ -131,6 +154,8 @@
 1 PluralVP -> Were (Not) PluralDetPhrase (AdjPhrase) PluralNoun
 1 PluralVP -> Are (Not) AndAdj
 1 PluralVP -> Were (Not) AndAdj
+1 PluralVP -> Are (Not) The SuperAdj
+1 PluralVP -> Were (Not) The SuperAdj
 
 1 PluralVP -> Modal (Not) PresentPl
 1 PluralVP -> Modal (Not) TPresentPl (Obj)
@@ -162,10 +187,12 @@
 1 SingQuestion -> (WhAdv) Does SingSubj (Not) PresentPl
 1 SingQuestion -> (WhAdv) Does SingSubj (Not) TPresentPl (Obj)
 
-1 SingQuestion -> (WhAdv) Is SingSubj (Not) DetPhrase (AdjPhrase) Noun
-1 SingQuestion -> (WhAdv) Was SingSubj (Not) DetPhrase (AdjPhrase) Noun
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) SingSubj
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) SingSubj
 1 SingQuestion -> (WhAdv) Is SingSubj (Not) AndAdj
 1 SingQuestion -> (WhAdv) Was SingSubj (Not) AndAdj
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) The SuperAdj
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) The SuperAdj
 
 1 SingQuestion -> (WhAdv) Modal SingSubj (Not) PresentPl
 1 SingQuestion -> (WhAdv) Modal SingSubj (Not) TPresentPl (Obj)
@@ -194,6 +221,8 @@
 1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) PluralDetPhrase (AdjPhrase) PluralNoun
 1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) AndAdj
 1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) AndAdj
+1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) The SuperAdj
+1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) The SuperAdj
 
 1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) PresentPl
 1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) TPresentPl (Obj)
@@ -201,6 +230,34 @@
 1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have TPastPart (Obj)
 1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have Been {PresentPart | PastPart}
 1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have Been {TPresentPart | TPastPart} (Obj)
+
+#Questions WhPN
+
+1 SingQuestion -> WhPN Is (Not) TPresentPart
+1 SingQuestion -> WhPN Was (Not) TPresentPart
+1 SingQuestion -> WhPN Has (Not) TPastPart
+1 SingQuestion -> WhPN Had (Not) TPastPart
+1 SingQuestion -> WhPN Has (Not) Been {TPresentPart | TPastPart}
+1 SingQuestion -> WhPN Had (Not) Been {TPresentPart | TPastPart}
+
+1 SingQuestion -> WhPN Does (Not) TPresentPl
+
+1 SingQuestion -> WhPN Modal (Not) TPresentPl
+1 SingQuestion -> WhPN Modal (Not) Have TPastPart
+1 SingQuestion -> WhPN Modal (Not) Have Been {TPresentPart | TPastPart}
+
+#Plural Questions WhPN
+1 PluralQuestion -> WhPN Are (Not) TPresentPart
+1 PluralQuestion -> WhPN Were (Not) TPresentPart
+1 PluralQuestion -> WhPN Have (Not) TPastPart
+1 PluralQuestion -> WhPN Had (Not) TPastPart
+1 PluralQuestion -> WhPN Have (Not) Been {TPresentPart | TPastPart}
+1 PluralQuestion -> WhPN Had (Not) Been {TPresentPart | TPastPart}
+1 PluralQuestion -> WhPN Do (Not) TPresentPl
+
+1 PluralQuestion -> WhPN Modal (Not) TPresentPl
+1 PluralQuestion -> WhPN Modal (Not) Have TPastPart
+1 PluralQuestion -> WhPN Modal (Not) Have Been {TPresentPart | TPastPart}
 
 #Commands
 1 Imperative -> (Do Not) PresentPl
@@ -212,4 +269,4 @@
 1 AP -> SubConj PluralDeclarative
 
 #Prepositional Phrases
-1 PP -> Prep Obj
+1 PP -> Prep Obj (PP)

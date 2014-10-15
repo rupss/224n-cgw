@@ -2,12 +2,12 @@
 
 # Add to the disjunction below any new POS tag that you might introduce in Vocab.gr. 
 #This ensures that your grammar retains the ability to parse any given sequence of POS tags
-1 Markov -> { Det |  Noun | Prep | Proper} (Markov)
-1 Markov -> { PluralDet | Prep | Proper | EOF | Pause} (Markov)
+1 Markov -> { SingDet | Det |  Noun | Prep | Proper} (Markov)
+1 Markov -> { Prep | Proper | EOF | Pause} (Markov)
 1 Markov -> {CoordConj | Numbers | Exp | SubConj | Modal | Adj} (Markov)
 1 Markov -> {CompAdj | SuperAdj | PluralNoun | ProperNoun | PluralProperNoun} (Markov)
 1 Markov -> {PossPersonalPN | Adv} (Markov) 
-1 Markov -> {Not | To} (Markov)
+1 Markov -> {Not | To | The} (Markov)
 1 Markov -> {WhDet | WhPN} (Markov)
 1 Markov -> {Whose | WhAdv | PossMarker | Comma | And | But} (Markov)
 1 Markov -> {Are | Have | Is | Has | Had | Have | Was | Were | Be | Been | Being} (Markov)
