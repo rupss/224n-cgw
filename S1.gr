@@ -6,54 +6,210 @@
 
 # This is a very, very, very simple grammar to get you started.
 
+#Types of Sentences
+10 S1 -> (AP Comma) SingDeclarative (PP) (AP) {ExclamationMark | Period}
+10 S1 -> (AP Comma) PluralDeclarative (PP) (AP) {ExclamationMark | Period}
+5 S1 -> SingQuestion (PP) (AP) QuestionMark
+5 S1 -> PluralQuestion (PP) (AP) QuestionMark
+2 S1 -> (AP Comma) Imperative (PP) (AP) {ExclamationMark | Period}
+#1 S1 -> Exclamation ExclamationMark
 
-1 S1 -> {SingPhrase | PluralPhrase}
-1 NP -> {SingNP | PluralNP}
+#Declaritive Structures
+1 SingDeclarative -> SingSubj SingVP
+1 PluralDeclarative -> PluralSubj PluralVP
 
-1 AdjPhrase -> {CommaAdj | AndAdj}
+#Objects
+1 Obj -> SingObj
+1 Obj -> PluralObj
+
+20 SingObj -> DetPhrase (AdjPhrase) Noun
+1 SingObj -> ProperNoun
+1 SingObj -> Proper
+5 SingObj -> PersonalPNAcc
+
+20 PluralObj -> (PluralDetPhrase) (AdjPhrase) PluralNoun
+1 PluralObj -> PluralProperNoun
+1 PluralObj -> PersonalPNAcc
+5 PluralObj -> SingObjComma And SingObj
+
+10 SingObjComma -> SingObj
+1 SingObjComma -> SingObjComma Comma SingObj
+
+#Subjects
+20 SingSubj -> DetPhrase (AdjPhrase) Noun
+5 SingSubj -> ProperNoun
+5 SingSubj -> Proper
+5 SingSubj -> PersonalPNNomSing
+
+20 PluralSubj -> (PluralDetPhrase) (AdjPhrase) PluralNoun
+5 PluralSubj -> PluralProperNoun
+5 PluralSubj -> PersonalPNNomPl
+5 PluralSubj -> SingSubjComma And SingSubj
+
+10 SingSubjComma -> SingSubj
+1 SingSubjComma -> SingSubjComma Comma SingSubj
+
+#Determiners
+20 DetPhrase -> Det
+10 DetPhrase -> PossPersonalPN
+1 DetPhrase -> ProperNoun PossMarker
+
+20 PluralDetPhrase -> PluralDet (Numbers)
+10 PluralDetPhrase -> PossPersonalPN (Numbers)
+1 PluralDetPhrase -> ProperNoun PossMarker (Numbers)
+10 PluralDetPhrase -> Numbers
+1 PluralDetPhrase -> e
+
+#Adjective Phrases
 10 AdjPhrase -> {Adj | CompAdj | SuperAdj}
+1 AdjPhrase -> {CommaAdj | AndAdj}
 
+10 CommaAdj -> {Adj | CompAdj | SuperAdj}
 1 CommaAdj -> CommaAdj Comma CommaAdj
-1 CommaAdj -> {Adj | CompAdj | SuperAdj}
 
+10 AndAdj -> {Adj | CompAdj | SuperAdj}
 1 AndAdj -> AndAdj And AndAdj
-1 AndAdj -> {Adj | CompAdj | SuperAdj}
 
-1 SingPhrase -> SingNP SingVP
+#Verb Phrases
 
-20 SingNP -> Det (AdjPhrase) Noun
-1 SingNP -> ProperNoun
+1 SingVP -> PresentSing
+1 SingVP -> TPresentSing (Obj)
+1 SingVP -> Past
+1 SingVP -> TPast (Obj)
+1 SingVP -> Is (Not) PresentPart
+1 SingVP -> Is (Not) TPresentPart (Obj)
+1 SingVP -> Was (Not) PresentPart
+1 SingVP -> Was (Not) TPresentPart (Obj)
+1 SingVP -> Has (Not) PastPart
+1 SingVP -> Has (Not) TPastPart (Obj)
+1 SingVP -> Has (Not) PastPart
+1 SingVP -> Had (Not) TPastPart (Obj)
+1 SingVP -> Has (Not) Been {PresentPart | PastPart}
+1 SingVP -> Has (Not) Been {TPresentPart | TPastPart} (Obj)
+1 SingVP -> Has (Not) Been {PresentPart | PastPart}
+1 SingVP -> Had (Not) Been {TPresentPart | TPastPart} (Obj)
+1 SingVP -> Does (Not) PresentPl
+1 SingVP -> Does (Not) TPresentPl (Obj)
 
-1 SingVP -> {SingVPNoObj | SingVPWithObj}
-1 SingVPNoObj -> { SingVerbOnly | IsVerb | HasVerb}
+1 SingVP -> Is (Not) DetPhrase (AdjPhrase) Noun
+1 SingVP -> Was (Not) DetPhrase (AdjPhrase) Noun
+1 SingVP -> Is (Not) AndAdj
+1 SingVP -> Was (Not) AndAdj
 
-1 SingVerbOnly -> {PastVerb | 3rdSingPresentVerb | TPastVerb | T3rdSingPresentVerb}
-1 IsVerb -> Is {PresentPartVerb | TPresentPartVerb }
-1 HasVerb -> Has {PastPartVerb | TPastPartVerb}
+1 SingVP -> Modal (Not) PresentPl
+1 SingVP -> Modal (Not) TPresentPl (Obj)
+1 SingVP -> Ought (Not) To PresentPl
+1 SingVP -> Ought (Not) To TPresentPl (Obj)
+1 SingVP -> Modal (Not) Have PastPart
+1 SingVP -> Modal (Not) Have TPastPart (Obj)
+1 SingVP -> Modal (Not) Have Been {PresentPart | PastPart}
+1 SingVP -> Modal (Not) Have Been {TPresentPart | TPastPart} (Obj)
+1 SingVP -> Ought (Not) To Have PastPart
+1 SingVP -> Ought (Not) To Have TPastPart (Obj)
 
-1 SingVPWithObj -> { SingVerbObject | IsVerbObj | HasVerbObj}
+#Plural Verb Phrases
+1 PluralVP -> PresentPl
+1 PluralVP -> TPresentPl (Obj)
+1 PluralVP -> Past
+1 PluralVP -> TPast (Obj)
+1 PluralVP -> Are (Not) PresentPart
+1 PluralVP -> Are (Not) TPresentPart (Obj)
+1 PluralVP -> Were (Not) PresentPart
+1 PluralVP -> Were (Not) TPresentPart (Obj)
+1 PluralVP -> Have (Not) PastPart
+1 PluralVP -> Have (Not) TPastPart (Obj)
+1 PluralVP -> Had (Not) PastPart
+1 PluralVP -> Had (Not) TPastPart (Obj)
+1 PluralVP -> Have (Not) Been {PresentPart | PastPart}
+1 PluralVP -> Have (Not) Been {TPresentPart | TPastPart} (Obj)
+1 PluralVP -> Has (Not) Been {PresentPart | PastPart}
+1 PluralVP -> Had (Not) Been {TPresentPart | TPastPart} (Obj)
+1 PluralVP -> Do (Not) PresentPl
+1 PluralVP -> Do (Not) TPresentPl (Obj)
 
-1 SingVerbObject -> {TPastVerb | T3rdSingPresentVerb} NP
-1 IsVerbObj -> Is TPresentPartVerb NP
-1 HasVerbObj -> Has TPastPartVerb NP
+1 PluralVP -> Are (Not) PluralDetPhrase (AdjPhrase) PluralNoun
+1 PluralVP -> Were (Not) PluralDetPhrase (AdjPhrase) PluralNoun
+1 PluralVP -> Are (Not) AndAdj
+1 PluralVP -> Were (Not) AndAdj
 
+1 PluralVP -> Modal (Not) PresentPl
+1 PluralVP -> Modal (Not) TPresentPl (Obj)
+1 PluralVP -> Ought (Not) To PresentPl
+1 PluralVP -> Ought (Not) To TPresentPl (Obj)
+1 PluralVP -> Modal (Not) Have PastPart
+1 PluralVP -> Modal (Not) Have TPastPart (Obj)
+1 PluralVP -> Modal (Not) Have Been {PresentPart | PastPart}
+1 PluralVP -> Modal (Not) Have Been {TPresentPart | TPastPart} (Obj)
+1 PluralVP -> Ought (Not) To Have PastPart
+1 PluralVP -> Ought (Not) To Have TPastPart (Obj)
 
-1 PluralPhrase -> PluralNP PluralVP
-1 PluralNP -> (PluralDet) (AdjPhrase) PluralNoun
-1 PluralNP -> PluralProperNoun
+#Questions
 
-1 PluralVP -> {PluralVPNoObj | PluralVPWithObj }
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) PresentPart
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) TPresentPart (Obj)
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) PresentPart
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) TPresentPart (Obj)
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) PastPart
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) TPastPart (Obj)
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) PastPart
+1 SingQuestion -> (WhAdv) Had SingSubj (Not) TPastPart (Obj)
 
-1 AreVerb -> Are {PresentPartVerb | TPresentPartVerb}
-1 HaveVerb -> Have {PastPartVerb | TPastPartVerb}
-1 PlainPluralVerb -> {BaseVerb | TBaseVerb | T3rdPluralPresentVerb}
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) Been {PresentPart | PastPart}
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) Been {TPresentPart | TPastPart} (Obj)
+1 SingQuestion -> (WhAdv) Has SingSubj (Not) Been {PresentPart | PastPart}
+1 SingQuestion -> (WhAdv) Had SingSubj (Not) Been {TPresentPart | TPastPart} (Obj)
 
-1 PluralVPNoObj -> {PlainPluralVerb | AreVerb | HaveVerb}
+1 SingQuestion -> (WhAdv) Does SingSubj (Not) PresentPl
+1 SingQuestion -> (WhAdv) Does SingSubj (Not) TPresentPl (Obj)
 
-1 PluralVerbObj -> {TPastVerb | T3rdPluralPresentVerb} NP
-1 AreVerbObj -> Are TPresentPartVerb NP
-1 HaveVerbObj ->  Have TPastPartVerb NP
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) DetPhrase (AdjPhrase) Noun
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) DetPhrase (AdjPhrase) Noun
+1 SingQuestion -> (WhAdv) Is SingSubj (Not) AndAdj
+1 SingQuestion -> (WhAdv) Was SingSubj (Not) AndAdj
 
-1 PluralVPWithObj -> {PluralVerbObj | AreVerbObj | HaveVerbObj}
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) PresentPl
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) TPresentPl (Obj)
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) Have PastPart
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) Have TPastPart (Obj)
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) Have Been {PresentPart | PastPart}
+1 SingQuestion -> (WhAdv) Modal SingSubj (Not) Have Been {TPresentPart | TPastPart} (Obj)
 
+#Plural Questions
+1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) PresentPart
+1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) TPresentPart (Obj)
+1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) PresentPart
+1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) TPresentPart (Obj)
+1 PluralQuestion -> (WhAdv) Have PluralSubj (Not) PastPart
+1 PluralQuestion -> (WhAdv) Have PluralSubj (Not) TPastPart (Obj)
+1 PluralQuestion -> (WhAdv) Had PluralSubj (Not) PastPart
+1 PluralQuestion -> (WhAdv) Had PluralSubj (Not) TPastPart (Obj)
+1 PluralQuestion -> (WhAdv) Have PluralSubj (Not) Been {PresentPart | PastPart}
+1 PluralQuestion -> (WhAdv) Have PluralSubj (Not) Been {TPresentPart | TPastPart} (Obj)
+1 PluralQuestion -> (WhAdv) Has PluralSubj (Not) Been {PresentPart | PastPart}
+1 PluralQuestion -> (WhAdv) Had PluralSubj (Not) Been {TPresentPart | TPastPart} (Obj)
+1 PluralQuestion -> (WhAdv) Do PluralSubj (Not) PresentPl
+1 PluralQuestion -> (WhAdv) Do PluralSubj (Not) TPresentPl (Obj)
 
+1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) PluralDetPhrase (AdjPhrase) PluralNoun
+1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) PluralDetPhrase (AdjPhrase) PluralNoun
+1 PluralQuestion -> (WhAdv) Are PluralSubj (Not) AndAdj
+1 PluralQuestion -> (WhAdv) Were PluralSubj (Not) AndAdj
+
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) PresentPl
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) TPresentPl (Obj)
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have PastPart
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have TPastPart (Obj)
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have Been {PresentPart | PastPart}
+1 PluralQuestion -> (WhAdv) Modal PluralSubj (Not) Have Been {TPresentPart | TPastPart} (Obj)
+
+#Commands
+1 Imperative -> (Do Not) PresentPl
+1 Imperative -> (Do Not) TPresentPl (Obj)
+
+#Adverbial Phrases
+2 AP -> Adv
+1 AP -> SubConj SingDeclarative
+1 AP -> SubConj PluralDeclarative
+
+#Prepositional Phrases
+1 PP -> Prep Obj

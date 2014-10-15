@@ -37,23 +37,15 @@
 # Proper nouns.  Note that our Proper tag is just for people.
 1	Proper -> {Arthur | Guinevere | Sir Lancelot | Sir Bedevere | Zoot | Dingo | Patsy | Uther Pendragon}
 
-# Verbs (third person singular present).
-# Note that only transitive verbs get our VerbT tag,
-# and some of those could also function as intransitives!
-1	VerbT -> has
-1	VerbT -> covers
-1	VerbT -> is
-1	VerbT -> drinks
-1	VerbT -> carries
-1	VerbT -> rides
 
-1 Is -> is
-1 Has -> has
 
 # End-of-sentence.
 1	EOF ->	!
 1	EOF ->	.
 1	EOF ->	?
+1 QuestionMark -> ?
+1	ExclamationMark ->	!
+1	Period ->	.
 
 # Pauses.
 
@@ -78,25 +70,13 @@
 1	CoordConj ->	so
 
 # Numbers.
-1	Numbers -> {eight | five | one | 5.5 | sixty | 5,000}
+1	Numbers -> {eight | five | 5.5 | sixty | 5,000} #deleted one
 
 # Expletive.
 1	Exp -> there
 
 # Subordinating conjunctions.
-1	SubConj -> {that | so | while | because | if}
-
-# Modals.
-1	Modal -> can
-1	Modal ->	could
-1	Modal ->	may
-1	Modal ->	might
-1	Modal ->	must
-1	Modal ->	ought
-1	Modal ->	shall
-1	Modal ->	should
-1	Modal ->	will
-1	Modal ->	would
+1	SubConj -> {that | so | while | because | if | when | where}
 
 
 # Adjectives.
@@ -162,14 +142,15 @@
 1	PluralProperNoun ->	Saxons
 
 # Personal pronouns.
-1	PersonalPN ->	he
-1	PersonalPN ->	her
-1	PersonalPN ->	him
-1	PersonalPN ->	it
-1	PersonalPN ->	one
-1	PersonalPN ->	she
-1	PersonalPN ->	them
-1	PersonalPN ->	they
+1	PersonalPNNomSing ->	he
+1	PersonalPNAcc ->	her
+1	PersonalPNAcc ->	him
+1	PersonalPNAcc ->	it
+1	PersonalPNNomSing ->	it
+1	PersonalPNNomSing ->	one
+1	PersonalPNNomSing ->	she
+1	PersonalPNAcc ->	them
+1	PersonalPNNomPl ->	they
 
 # Possessive personal pronouns
 1	PossPersonalPN ->	her
@@ -187,93 +168,103 @@
 1	Adv ->	successfully
 1	Adv ->	unfortunately
 
-# 'do'/'does'
-1	Do ->	do
-1	Does ->	does
-
 # 'to'
 1	To ->	to
 
 # 'not'
 1	Not ->	not
 
-# Verbs (base form).
-1	TBaseVerb ->	have
-1	BaseVerb ->	speak
-1	TBaseVerb ->	cover
-1	BaseVerb ->	be
-1	TBaseVerb ->	ride
-1	TBaseVerb ->	drink
-1	TBaseVerb ->	grow
-1	TBaseVerb ->	carry
-1	BaseVerb ->	suggest
-1	BaseVerb ->	migrate
-1	TBaseVerb ->	know
+# is/has
+1 Is -> is
+1 Are -> are
+1 Was -> was
+1 Were -> were
+1 Has -> has
+1 Have -> have
+1 Had -> had
+1 Be -> be
+1 Been -> been
+1 Being -> being
 
+# 'do'/'does'
+1	Do ->	do
+1	Does ->	does
+
+# Modals.
+1	Modal ->    can
+1	Modal ->	could
+1	Modal ->	may
+1	Modal ->	might
+1	Modal ->	must
+1	Modal ->	shall
+1	Modal ->	should
+1	Modal ->	will
+1	Modal ->	would
+
+1	Ought ->	ought #special, always has to
+
+# Verbs (third person singular present).
+# Note that only transitive verbs get our VerbT tag,
+# and some of those could also function as intransitives!
+1	TPresentSing -> has
+1	TPresentSing -> covers
+1	TPresentSing -> drinks
+1	TPresentSing -> carries
+1	TPresentSing -> rides
+1	PresentSing ->	speaks
+1	TPresentSing ->	grows
+1	PresentSing ->	goes
+1	PresentSing ->	migrates
+1	PresentSing ->	suggests
+1	TPresentSing ->	knows
+
+# Verbs (base form).
+1	TPresentPl ->	have
+1	PresentPl ->	speak
+1	TPresentPl ->	cover
+1	TPresentPl ->	ride
+1	TPresentPl ->	drink
+1	TPresentPl ->	grow
+1	TPresentPl ->	carry
+1	PresentPl ->	suggest
+1	PresentPl ->	migrate
+1	TPresentPl ->	know
 
 # Verbs (past tense).
-1	TPastVerb ->	had
-1	PastVerb ->	spoke
-1	TPastVerb ->	covered
-1	PastVerb ->	was
-1	PastVerb ->	were
-1	TPastVerb ->	rode
-1	TPastVerb ->	drank
-1	TPastVerb ->	grew
-1	TPastVerb ->	carried
-1	PastVerb ->	suggested
-1	PastVerb ->	migrated
-1	TPastVerb ->	knew
+1	TPast ->	had
+1	Past ->	spoke
+1	TPast ->	covered
+1	TPast ->	rode
+1	TPast ->	drank
+1	TPast ->	grew
+1	TPast ->	carried
+1	Past ->	suggested
+1	Past ->	migrated
+1	TPast ->	knew
 
 # Verbs (present participles).
-1	TPresentPartVerb ->	having
-1	PresentPartVerb ->	speaking
-1	TPresentPartVerb ->	covering
-1	PresentPartVerb ->	being
-1	TPresentPartVerb ->	riding
-1	TPresentPartVerb ->	drinking
-1	TPresentPartVerb ->	growing
-1	TPresentPartVerb ->	carrying
-1	PresentPartVerb ->	suggesting
-1	PresentPartVerb ->	migrating
-1	TPresentPartVerb ->	knowing
+1	TPresentPart ->	having
+1	PresentPart ->	speaking
+1	TPresentPart ->	covering
+1	TPresentPart ->	riding
+1	TPresentPart ->	drinking
+1	TPresentPart ->	growing
+1	TPresentPart ->	carrying
+1	PresentPart ->	suggesting
+1	PresentPart ->	migrating
+1	TPresentPart ->	knowing
 
 # Verbs (past participle).
-1	TPastPartVerb ->	had
-1	PastPartVerb ->	spoken
-1	TPastPartVerb ->	covered
-1	PastPartVerb ->	been
-1	TPastPartVerb ->	ridden
-1	TPastPartVerb ->	drunk
-1	TPastPartVerb ->	grown
-1	TPastPartVerb ->	carried
-1	PastPartVerb ->	suggested
-1	PastPartVerb ->	migrated
-1	TPastPartVerb ->	known
-
-# More third person singular verbs.
-1	3rdSingPresentVerb ->	speaks
-1	T3rdSingPresentVerb ->	grows
-1	3rdSingPresentVerb ->	goes
-1	3rdSingPresentVerb ->	migrates
-1	3rdSingPresentVerb ->	suggests
-1	T3rdSingPresentVerb ->	knows
-
-# Verbs (present, plural, third person).
-1	T3rdPluralPresentVerb ->	have
-1	3rdPluralPresentVerb ->	speak
-1	T3rdPluralPresentVerb ->	cover
-1	3rdPluralPresentVerb ->	are
-1	T3rdPluralPresentVerb ->	ride
-1	T3rdPluralPresentVerb ->	drink
-1	T3rdPluralPresentVerb ->	grow
-1	T3rdPluralPresentVerb ->	carry
-1	3rdPluralPresentVerb ->	suggest
-1	3rdPluralPresentVerb ->	migrate
-1	T3rdPluralPresentVerb ->	know
-
-1 Are -> are
-1 Have -> have
+1	TPastPart ->	had
+1	PastPart ->	spoken
+1	TPastPart ->	covered
+1	TPastPart ->	ridden
+1	TPastPart ->	drunk
+1	TPastPart ->	grown
+1	TPastPart ->	carried
+1	PastPart ->	suggested
+1	PastPart ->	migrated
+1	TPastPart ->	known
 
 # Wh-determiners.
 1	WhDet ->	that
